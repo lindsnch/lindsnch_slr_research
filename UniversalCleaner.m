@@ -41,8 +41,9 @@ for i = 1:length(listfiles)
     outputtable = data(:,{'Date','SeaLevel','Issues'});
 
     [~, name, ~] = fileparts(currentfile);
-    filename = [name,'_Cleaned_Monthly.xlsx'];
+    filename = [name,'_Cleaned_Monthly.csv'];
     writetable(outputtable, filename);
     disp(filename)
 end
+
 
