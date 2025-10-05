@@ -20,5 +20,7 @@ This section will be updated as needed to reflect most-recent progress on the pr
 - [x] Created basic ArcGIS Pro map listing all stations currently accounted for (view map here: https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=b1ba92082fb24eb78e508469e5a3ed79)
 - [x] Selected Stations providing monthly data (see spreadsheet here: https://docs.google.com/spreadsheets/d/1gy-OrPBqSnwzm830RdczyI_7Te8s8pdkHp8mAuuROf4/edit?usp=sharing)
 
+Last updated: 10/05/2025
+
 ## Contact
 You can reach me by email at LChu@terpmail.umd.edu, or lindsaynchu@gmail.com
