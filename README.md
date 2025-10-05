@@ -1,4 +1,2 @@
-# psmsl_txt_to_csv
-Cleaner and converter for PSMSL monthly RLR station data from the PSMSL website @ https://psmsl.org/ 
+# Research Project Description
 
-NOTE: files used must already be in .txt format (cannot pull directly from website)
