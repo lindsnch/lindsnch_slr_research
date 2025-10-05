@@ -13,10 +13,12 @@ This page serves as the project description for my undergraduate research projec
 
 ## Tasks
 This section will be updated as needed to reflect most-recent progress on the project.
-- [] Beginning acquisition of wind field and subsidence data for respective stations
-- [] Beginning data analysis of monthly data, computing linear and quadratic trends for each station over time
-- [] Downloaded and cleaned Monthly Tide Gauge data from PSMSL
-  - [] Wrote MATLAB script to clean txt data (date correction, accuracy assessment, etc.), and convert to .csv and/or .xlsx files
-- [] Created basic ArcGIS Pro map listing all stations currently accounted for (view map here: https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=b1ba92082fb24eb78e508469e5a3ed79)
-- [] Selected Stations providing monthly data (see spreadsheet here: https://docs.google.com/spreadsheets/d/1gy-OrPBqSnwzm830RdczyI_7Te8s8pdkHp8mAuuROf4/edit?usp=sharing)
+- [ ] Beginning acquisition of wind field and subsidence data for respective stations
+- [ ] Beginning data analysis of monthly data, computing linear and quadratic trends for each station over time
+- [x] Downloaded and cleaned Monthly Tide Gauge data from PSMSL
+  - [x] Wrote MATLAB script to clean txt data (date correction, accuracy assessment, etc.), and convert to .csv and/or .xlsx files
+- [x] Created basic ArcGIS Pro map listing all stations currently accounted for (view map here: https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=b1ba92082fb24eb78e508469e5a3ed79)
+- [x] Selected Stations providing monthly data (see spreadsheet here: https://docs.google.com/spreadsheets/d/1gy-OrPBqSnwzm830RdczyI_7Te8s8pdkHp8mAuuROf4/edit?usp=sharing)
 
+## Contact
+You can reach me by email at LChu@terpmail.umd.edu, or lindsaynchu@gmail.com
