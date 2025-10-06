@@ -23,4 +23,4 @@ This section will be updated as needed to reflect most-recent progress on the pr
 Last updated: 10/05/2025
 
 ## Contact
-You can reach me by email at LChu@terpmail.umd.edu, or lindsaynchu@gmail.com
+You can reach me by email at lchu@terpmail.umd.edu, or lindsaynchu@gmail.com
