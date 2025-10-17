@@ -1,0 +1,35 @@
+listfiles = dir('*.csv');
+for i = 1:length(listfiles)
+    currentFile = listfiles(i).name;
+    readingt = readtable(currentFile);
+    
+    [~, name_extless, ~] = fileparts(currentFile);
+    parts = strsplit(name_extless, '_');
+    cityname = parts{1};
+    
+    % Process the second column of the table
+    y = readingt.SeaLevel;
+    dates = readingt.Date;
+    numeric_dates = datenum(dates);
+    mdl = fitlm(numeric_dates,y);
+    % Display the summary of the linear model
+    disp(mdl)
+
+    slope = mdl.Coefficients.Estimate(2);
+
+    figure;
+    plot(dates, y, 'x', 'DisplayName','Data');
+    hold on;
+
+    plot(dates, mdl.Fitted, 'DisplayName','Fit');
+    xlabel('Date');
+    ylabel('Sea Level');
+    title('Sea Level Linear Trends: ',cityname);
+    hold off;
+
+    % exporting
+    outputfile = [cityname,'_Linear_Plot.png'];
+    saveas(gcf, outputfile);
+    disp(outputfile)
+    disp(slope)
+end
