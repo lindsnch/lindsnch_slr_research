@@ -17,7 +17,7 @@ This section will be updated as needed to reflect most-recent progress on the pr
 - [ ] Beginning data analysis of monthly data, computing linear and quadratic trends for each station over time
 - [x] Downloaded and cleaned Monthly Tide Gauge data from PSMSL
   - [x] Wrote MATLAB script to clean txt data (date correction, accuracy assessment, etc.), and convert to .csv and/or .xlsx files
-- [x] Created basic ArcGIS Pro map listing all stations currently accounted for (view map here: [(https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=7359ca3bda874a48b17c62c61e387d2f)](https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=7359ca3bda874a48b17c62c61e387d2f))
+- [x] Created basic ArcGIS Pro map listing all stations currently accounted for (view map here: [[(https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=7359ca3bda874a48b17c62c61e387d2f)](https://uofmd.maps.arcgis.com/apps/mapviewer/index.html?webmap=7359ca3bda874a48b17c62c61e387d2f)](https://uofmd.maps.arcgis.com/home/item.html?id=7359ca3bda874a48b17c62c61e387d2f))
 - [x] Selected Stations providing monthly data (see spreadsheet here: https://docs.google.com/spreadsheets/d/1gy-OrPBqSnwzm830RdczyI_7Te8s8pdkHp8mAuuROf4/edit?usp=sharing)
 
 Last updated: 10/05/2025
