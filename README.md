@@ -1,4 +1,4 @@
-# Assessing Regional Vulnerability to Sea Level Rise on the North American East Coast as a Factor of Atmospheric Forcing on Ocean Circulation
+# Assessing Regional Vulnerability to Sea Level Rise on the North American East Coast 
 ## Lindsay Chu 2025/2026 Undergraduate Research Project
 This page serves as the project description for my undergraduate research project, conducted under the supervision of Dr. James Carton of the University of Maryland's Atmospheric and Oceanic Science Department. Credit will be recieved for this course in tandem with the AOSC499 course offering over the Fall 2025 and Spring 2026 semesters. 
 
