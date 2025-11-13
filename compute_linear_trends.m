@@ -1,4 +1,4 @@
-listfiles = dir('*.csv');
+listfiles = dir('*_Monthly.csv');
 numfiles = length(listfiles);
 citynamestotal = cell(numfiles,1);
 totalslopes = zeros(numfiles,1);
@@ -12,16 +12,17 @@ for i = 1:numfiles
     parts = strsplit(name_extless, '_');
     cityname = parts{1};
     
-    % Process the second column of the table
+    % assigning variables to be plotted
     y = readingt.SeaLevel;
     dates = readingt.Date;
     numeric_dates = datenum(dates);
     mdl = fitlm(numeric_dates,y);
-    % Display the summary of the linear model
-    disp(mdl)
+    disp(mdl); 
 
     slope = mdl.Coefficients.Estimate(2);
+    slopemmyr = slope*12
 
+    % things for plot
     figure;
     plot(dates, y, 'x', 'DisplayName','Data');
     hold on;
@@ -37,10 +38,10 @@ for i = 1:numfiles
     saveas(gcf, outputfile);
     close(gcf);
     disp(outputfile)
-    disp(slope)
+    disp(slopemmyr)
 
     citynamestotal{k} = cityname;
-    totalslopes(k) = slope;
+    totalslopes(k) = slopemmyr;
     k = k + 1;
 end
 
@@ -49,6 +50,6 @@ end
 finalcities = citynamestotal(1:numfiles);
 finalslopes = totalslopes(1:numfiles);
 newtable = table(finalcities, finalslopes, 'VariableNames', {'City', 'LinearSlope'});
-outputtable = 'Northeast_Linear_Slopes.xlsx';
+outputtable = 'Northeast_Linear_Slopes.csv';
 writetable(newtable, outputtable);
 disp(newtable)
