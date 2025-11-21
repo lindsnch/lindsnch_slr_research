@@ -1,7 +1,7 @@
-listfiles = dir('*.csv');
+listfiles = dir('*_Monthly.csv');
 numfiles = length(listfiles);
 citynamestotal = cell(numfiles,1);
-totalslopes = zeros(numfiles,1);
+totalaccel = zeros(numfiles,1);
 k = 1;
     
 for i = 1:numfiles
@@ -12,43 +12,57 @@ for i = 1:numfiles
     parts = strsplit(name_extless, '_');
     cityname = parts{1};
     
-    % Process the second column of the table
+ % assigning variables to be plotted
     y = readingt.SeaLevel;
     dates = readingt.Date;
-    numeric_dates = datenum(dates);
-    mdl = fitlm(numeric_dates,y);
-    % Display the summary of the linear model
-    disp(mdl)
 
-    slope = mdl.Coefficients.Estimate(2);
+    % filtering out NaN values 
+    elimNaN = ~isnan(y);
+    y = y(elimNaN); 
+    dates = dates(elimNaN);
+
+    numeric_dates = datenum(dates);
+    centeredDates = numeric_dates - numeric_dates(1);
+    mdl_quad = polyfit(centeredDates, y, 2);
+    disp(mdl_quad)
+    
+    %find accleration values
+    mm_month = 2 * mdl_quad(1);
+    accel = mm_month * 144
+
+    y_fit = polyval(mdl_quad, centeredDates);
 
     figure;
-    plot(dates, y, 'x', 'DisplayName','Data');
+    plot(dates, y, 'kx', 'DisplayName', 'Data Points'); 
     hold on;
 
-    plot(dates, mdl.Fitted, 'DisplayName','Fit');
+    plot(dates, y_fit, 'b-', 'LineWidth', 2, 'DisplayName', 'Quadratic Fit');
     xlabel('Date');
-    ylabel('Sea Level');
-    title('Sea Level Linear Trends: ',cityname);
+    ylabel('Sea Level (mm)');
+    title('Sea Level Quadratic Trends: ',cityname);
+    legend("show");
     hold off;
 
     % exporting
-    outputfile = [cityname,'_Linear_Plot.png'];
+    h = gcf;
+    disp(h)
+    isvalid(h)
+    outputfile = [cityname,'_Quadratic_Plot.png'];
     saveas(gcf, outputfile);
     close(gcf);
     disp(outputfile)
-    disp(slope)
+    disp(accel)
 
     citynamestotal{k} = cityname;
-    totalslopes(k) = slope;
+    totalaccel(k) = accel;
     k = k + 1;
 end
 
 %% 
 % exporting
 finalcities = citynamestotal(1:numfiles);
-finalslopes = totalslopes(1:numfiles);
-newtable = table(finalcities, finalslopes, 'VariableNames', {'City', 'LinearSlope'});
-outputtable = 'Northeast_Linear_Slopes.xlsx';
+finalaccel = totalaccel(1:numfiles);
+newtable = table(finalcities, finalaccel, 'VariableNames', {'City', 'Acceleration(mm/year^2)'});
+outputtable = 'Accelerations.csv';
 writetable(newtable, outputtable);
 disp(newtable)
